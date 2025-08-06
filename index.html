@@ -13,7 +13,7 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #f4f4f4, #e8ebf0);
+      background: linear-gradient(135deg, #a8edea, #fed6e3); /* pastel teal to pastel pink */
       color: #2d2d2d;
       display: flex;
       justify-content: center;
@@ -21,6 +21,12 @@
       height: 100vh;
       text-align: center;
       padding: 1rem;
+      animation: fadeInBody 1.5s ease-in forwards;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .container {
@@ -30,12 +36,31 @@
       padding: 2.5rem;
       border-radius: 1rem;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h1 {
       font-size: 2.75rem;
       margin-bottom: 0.5rem;
       font-weight: 600;
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
     }
 
     p {
@@ -43,6 +68,12 @@
       color: #4e4e4e;
       margin-top: 0.5rem;
       line-height: 1.6;
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.01); }
     }
 
     .badge {
